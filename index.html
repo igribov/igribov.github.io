@@ -7,14 +7,24 @@
     var adUnits = [{
       code: 'example',
       sizes: [[300, 600]],
-      bids: [{
-        bidder: 'between',
-        params: {
-          w: 300,
-          h: 600,
-          s: 2667407,
+      bids: [
+        {
+          bidder: 'between',
+          params: {
+            w: 300,
+            h: 600,
+            s: 2667407,
+          }
+        },
+        {
+          bidder: 'between',
+          params: {
+            w: 970,
+            h: 250,
+            s: 2667423,
+          }
         }
-      }]
+      ]
 
     }];
 
