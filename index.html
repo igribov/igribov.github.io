@@ -7,15 +7,24 @@
     var adUnits = [{
       code: 'example',
       sizes: [[300, 600]],
-      bids: [{
-        bidder: 'between',
-        params: {
-          w: 300,
-          h: 600,
-          s: 2667407,
-        }
-      }]
-
+      bids: [
+        {
+          bidder: 'between',
+          params: {
+            w: 300,
+            h: 600,
+            s: 2667407,
+          }
+        },
+        {
+          bidder: 'between',
+          params: {
+            w: 240,
+            h: 400,
+            s: 8
+          }
+        },
+      ],
     }];
 
     var pbjs = pbjs || {};
@@ -37,7 +46,10 @@
 
           var params = pbjs.getAdserverTargetingForAdUnitCode("example");
           var iframe = document.getElementById('example');
+          var iframe2 = document.getElementById('example2');
           var iframeDoc = iframe.contentWindow.document;
+
+          concole.log(e);
 
           if(params && params['hb_adid']) {
             pbjs.renderAd(iframeDoc, params['hb_adid']);
@@ -51,5 +63,6 @@
 <body>
 <h2>Prebid.js BetweenBidAdapter Test</h2>
 <iframe id="example"></iframe>
+<iframe id="example2"></iframe>
 </body>
 </html>
