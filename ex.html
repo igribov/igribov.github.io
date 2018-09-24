@@ -149,7 +149,14 @@
 
 <hr>
 
-<div>
+<div id="btw">
+  <script type='text/javascript'>
+    setTimeout(function() {
+      var myFrame = document.createElement('iframe');
+      myFrame.src = 'frame.html';
+      document.getElementById('btw').append(myFrame);
+    }, 100);
+  </script>
   <iframe src="frame.html"></iframe>
 </div>
 
