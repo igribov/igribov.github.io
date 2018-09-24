@@ -109,20 +109,20 @@
       googletag.enableServices();
     });
 
-    // setTimeout(function () {
-    //   console.log('create csript');
-    //   var w = window;
-    //   for (i = 0; i < 10; i++) {
-    //     if (w.pbjs) {
-    //       try {
-    //         w.pbjs.renderAd(document, '%%PATTERN:hb_adid%%');
-    //         break;
-    //       } catch (e) {
-    //         continue;
-    //       }
-    //     }
-    //   }
-    // }, 5000);
+    setTimeout(function () {
+      console.log('create csript');
+      var w = window;
+      for (i = 0; i < 10; i++) {
+        if (w.pbjs) {
+          try {
+            w.pbjs.renderAd(document, '%%PATTERN:hb_adid%%');
+            break;
+          } catch (e) {
+            continue;
+          }
+        }
+      }
+    }, 5000);
 
   </script>
 
@@ -136,7 +136,7 @@
     <div id='div-1'>
       <script type='text/javascript'>
         googletag.cmd.push(function() {
-          googletag.display('div-1');
+          googletag.display('/45577845/Tatler/wide_banner_1');
         });
 
       </script>
@@ -147,7 +147,7 @@
     <div id='div-2'>
       <script type='text/javascript'>
         googletag.cmd.push(function() {
-          googletag.display('div-2');
+          googletag.display('/45577845/Tatler/skyscraper_inner');
         });
 
       </script>
