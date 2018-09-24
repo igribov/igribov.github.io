@@ -4,29 +4,36 @@
   <script>
     var PREBID_TIMEOUT = 700;
 
-    var adUnits = [{
-      code: 'example',
-      sizes: [[300, 600]],
-      bids: [
-        {
-          bidder: 'between',
-          params: {
-            w: 300,
-            h: 600,
-            s: 2667407,
-          }
-        },
-        {
-          bidder: 'between',
-          params: {
-            w: 970,
-            h: 250,
-            s: 2667423,
-          }
-        }
-      ]
-
-    }];
+    var adUnits = [
+      {
+        code: 'example',
+        sizes: [[300, 600]],
+        bids: [
+          {
+            bidder: 'between',
+            params: {
+              w: 300,
+              h: 600,
+              s: 2667407,
+            }
+          },
+        ],
+      },
+      {
+        code: 'example2',
+        sizes: [[970, 250]],
+        bids: [
+          {
+            bidder: 'between',
+            params: {
+              w: 970,
+              h: 250,
+              s: 2667423,
+            }
+          },
+        ],
+      },
+    ];
 
     var pbjs = pbjs || {};
     pbjs.que = pbjs.que || [];
@@ -35,13 +42,16 @@
 
 
   <script>
-    pbjs.que.push(function() {
-      pbjs.setConfig({ userSync: {
+    pbjs.que.push(function () {
+      pbjs.setConfig({
+        userSync: {
           iframeEnabled: true
-        }});
+        }
+      });
       pbjs.addAdUnits(adUnits);
       pbjs.requestBids({
-        bidsBackHandler: function(e) {
+        bidsBackHandler: function (e) {
+          console.log('bidsBackHandler->e', e);
           if (pbjs.adserverRequestSent) return;
           pbjs.adserverRequestSent = true;
 
@@ -49,7 +59,7 @@
           var iframe = document.getElementById('example');
           var iframeDoc = iframe.contentWindow.document;
 
-          if(params && params['hb_adid']) {
+          if (params && params['hb_adid']) {
             pbjs.renderAd(iframeDoc, params['hb_adid']);
           }
         }
