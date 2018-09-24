@@ -110,9 +110,9 @@
       });
     }
     // in case PBJS doesn't load
-    setTimeout(function() {
-      initAdserver();
-    }, FAILSAFE_TIMEOUT);
+    //setTimeout(function() {
+    //  initAdserver();
+    //}, FAILSAFE_TIMEOUT);
 
     googletag.cmd.push(function() {
       googletag.defineSlot('/45577845/Tatler/wide_banner_1', div_1_sizes, 'div-1').addService(googletag.pubads());
