@@ -51,17 +51,18 @@
       pbjs.addAdUnits(adUnits);
       pbjs.requestBids({
         bidsBackHandler: function (e) {
-          console.log('bidsBackHandler->e', e);
           if (pbjs.adserverRequestSent) return;
           pbjs.adserverRequestSent = true;
 
-          var params = pbjs.getAdserverTargetingForAdUnitCode("example");
-          var iframe = document.getElementById('example');
-          var iframeDoc = iframe.contentWindow.document;
+          ['example', 'example2'].forEach(function(code) {
+            let params = pbjs.getAdserverTargetingForAdUnitCode("example");
+            let iframe = document.getElementById('example');
+            let iframeDoc = iframe.contentWindow.document;
 
-          if (params && params['hb_adid']) {
-            pbjs.renderAd(iframeDoc, params['hb_adid']);
-          }
+            if (params && params['hb_adid']) {
+              pbjs.renderAd(iframeDoc, params['hb_adid']);
+            }
+          });
         }
       });
     });
@@ -71,5 +72,6 @@
 <body>
 <h2>Prebid.js BetweenBidAdapter Test</h2>
 <iframe id="example"></iframe>
+<iframe id="example2"></iframe>
 </body>
 </html>
