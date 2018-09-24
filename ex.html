@@ -66,6 +66,7 @@
     pbjs.que = pbjs.que || [];
 
     pbjs.que.push(function() {
+      pbjs.setConfig({ debug: true });
       pbjs.addAdUnits(adUnits);
       pbjs.requestBids({
         bidsBackHandler: initAdserver,
@@ -86,10 +87,10 @@
         });
       });
 
-      ['/45577845/Tatler/wide_banner_1', '/45577845/Tatler/skyscraper_inner'].forEach(function(code) {
-        let params = pbjs.getAdserverTargetingForAdUnitCode(code);
-        console.log('params', params);
-      });
+      //['/45577845/Tatler/wide_banner_1', '/45577845/Tatler/skyscraper_inner'].forEach(function(code) {
+      //  let params = pbjs.getAdserverTargetingForAdUnitCode(code);
+      //  console.log('params', params);
+      //});
 
     }
     // in case PBJS doesn't load
@@ -107,6 +108,21 @@
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
+
+    setTimeout(function () {
+      console.log('create csript');
+      var w = window;
+      for (i = 0; i < 10; i++) {
+        if (w.pbjs) {
+          try {
+            w.pbjs.renderAd(document, '%%PATTERN:hb_adid%%');
+            break;
+          } catch (e) {
+            continue;
+          }
+        }
+      }
+    }, 5000);
 
   </script>
 
