@@ -4,13 +4,14 @@
 </head>
 <body>
 <script>
-  var code = window.parent.code__ || 0;
-  console.log('create script', w, code);
+  var w = window;
   var w = window.parent;
   for (i = 0; i < 10; i++) {
+    console.log('create script', w);
+    w = w.parent;
     if (w.pbjs) {
       try {
-        w.pbjs.renderAd(document, code__);
+        w.pbjs.renderAd(document, 'code__');
         break;
       } catch (e) {
         continue;
