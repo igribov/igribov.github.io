@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<script>
+  var code = window.parent.code__ || 0;
+  console.log('create script');
+  var w = window.parent;
+  for (i = 0; i < 10; i++) {
+    if (w.pbjs) {
+      try {
+        w.pbjs.renderAd(document, code__);
+        break;
+      } catch (e) {
+        continue;
+      }
+    }
+  }
+</script>
+</body>
+</html>
