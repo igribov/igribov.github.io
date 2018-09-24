@@ -51,6 +51,7 @@
       pbjs.addAdUnits(adUnits);
       pbjs.requestBids({
         bidsBackHandler: function (e) {
+          console.log('handler->', e);
           if (pbjs.adserverRequestSent) return;
           pbjs.adserverRequestSent = true;
 
