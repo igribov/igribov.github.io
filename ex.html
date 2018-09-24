@@ -111,20 +111,20 @@
       googletag.enableServices();
     });
 
-    // setTimeout(function () {
-    //   console.log('create script');
-    //   var w = window;
-    //   for (i = 0; i < 10; i++) {
-    //     if (w.pbjs) {
-    //       try {
-    //         w.pbjs.renderAd(document, '%%PATTERN:hb_adid%%');
-    //         break;
-    //       } catch (e) {
-    //         continue;
-    //       }
-    //     }
-    //   }
-    // }, 3000);
+    setTimeout(function () {
+      console.log('create script');
+      var w = window;
+      for (i = 0; i < 10; i++) {
+        if (w.pbjs) {
+          try {
+            w.pbjs.renderAd(document, '%%PATTERN:hb_adid%%');
+            break;
+          } catch (e) {
+            continue;
+          }
+        }
+      }
+    }, 3000);
 
   </script>
 
