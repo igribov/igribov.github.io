@@ -55,8 +55,8 @@
           pbjs.adserverRequestSent = true;
 
           ['example', 'example2'].forEach(function(code) {
-            let params = pbjs.getAdserverTargetingForAdUnitCode("example");
-            let iframe = document.getElementById('example');
+            let params = pbjs.getAdserverTargetingForAdUnitCode(code);
+            let iframe = document.getElementById(code);
             let iframeDoc = iframe.contentWindow.document;
 
             if (params && params['hb_adid']) {
