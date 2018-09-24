@@ -21,14 +21,15 @@
         code: '/45577845/Tatler_test/wide_banner_1',
         mediaTypes: {
           banner: {
-            sizes: [[990, 250]],
+            sizes: [[990, 250], [970, 250]],
           },
         },
         bids: [
           {
             bidder: 'between',
             params: {
-              w: 990,
+              placementId: 12345,
+              w: 970,
               h: 250,
               s: 2667423,
             }
@@ -46,15 +47,8 @@
           {
             bidder: 'between',
             params: {
-              w: 300,
-              h: 600,
-              s: 2667407,
-            }
-          },
-          {
-            bidder: 'between',
-            params: {
-              w: 300,
+              placementId: 12345,
+              w: 970,
               h: 250,
               s: 2667407,
             }
