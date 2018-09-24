@@ -74,8 +74,10 @@
     });
 
     function initAdserver(e) {
-      console.log('handler->', e);
       if (pbjs.initAdserverSet) return;
+
+      console.log('handler->', e);
+
       pbjs.initAdserverSet = true;
       googletag.cmd.push(function() {
         pbjs.que.push(function() {
