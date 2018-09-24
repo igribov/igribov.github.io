@@ -10,8 +10,8 @@
       [990, 250],
     ];
     var div_2_sizes = [
-      [990, 250],
-      [990, 500]
+      [300, 600],
+      [300, 250]
     ];
     var PREBID_TIMEOUT = 1000;
     var FAILSAFE_TIMEOUT = 3000;
@@ -36,10 +36,10 @@
         ]
       },
       {
-        code: '/45577845/Tatler/wide_banner_2',
+        code: '/45577845/Tatler/skyscraper_inner',
         mediaTypes: {
           banner: {
-            sizes: [[990, 250], [990, 500]],
+            sizes: [[300, 600], [300, 250]],
           },
         },
         bids: [
@@ -48,7 +48,7 @@
             params: {
               w: 970,
               h: 250,
-              s: 2671636,
+              s: 2667407,
             }
           },
         ]
@@ -95,7 +95,7 @@
       googletag.enableServices();
     });
     googletag.cmd.push(function() {
-      googletag.defineSlot('/45577845/Tatler/wide_banner_2', div_2_sizes, 'div-2').addService(googletag.pubads());
+      googletag.defineSlot('/45577845/Tatler/skyscraper_inner', div_2_sizes, 'div-2').addService(googletag.pubads());
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
