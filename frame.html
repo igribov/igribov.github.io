@@ -8,10 +8,11 @@
   var w = window.parent;
   for (i = 0; i < 10; i++) {
     console.log('create script', w);
+    console.log('create script', w.code__);
     w = w.parent;
     if (w.pbjs) {
       try {
-        w.pbjs.renderAd(document, 'code__');
+        w.pbjs.renderAd(document, w.code__);
         break;
       } catch (e) {
         continue;
