@@ -5862,7 +5862,7 @@ pbjs.renderAd = function (doc, id) {
 
         if (renderer && renderer.url) {
           renderer.render(bid);
-          utils.logInfo('>>>>>>', utils.inIframe(), mediaType);
+          console.log('>>>>>>', utils.inIframe(), mediaType);
         } else if (doc === document && !utils.inIframe() || mediaType === 'video') {
           var message = 'Error trying to write ad. Ad render call ad id ' + id + ' was prevented from writing to the main document.';
           emitAdRenderFail(PREVENT_WRITING_ON_MAIN_DOCUMENT, message, bid);
