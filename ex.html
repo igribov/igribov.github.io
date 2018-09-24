@@ -81,8 +81,8 @@
     function initAdserver(e) {
       if (pbjs.initAdserverSet) return;
 
-      console.log('handler->', e["/45577845/Tatler/skyscraper_inner"].bids[0].requestId);
-      code__ = e["/45577845/Tatler/wide_banner_1"].bids[0].requestId;
+      console.log('handler->', e["/45577845/Tatler_test/skyscraper_inner"].bids[0].requestId);
+      code__ = e["/45577845/Tatler_test/wide_banner_1"].bids[0].requestId;
 
 
       pbjs.initAdserverSet = true;
@@ -93,7 +93,7 @@
         });
       });
 
-      //['/45577845/Tatler/wide_banner_1', '/45577845/Tatler/skyscraper_inner'].forEach(function(code) {
+      //['/45577845/Tatler_test/wide_banner_1', '/45577845/Tatler_test/skyscraper_inner'].forEach(function(code) {
       //  let params = pbjs.getAdserverTargetingForAdUnitCode(code);
       //  console.log('params', params);
       //});
@@ -105,12 +105,12 @@
     }, FAILSAFE_TIMEOUT);
 
     googletag.cmd.push(function() {
-      googletag.defineSlot('/45577845/Tatler/wide_banner_1', div_1_sizes, 'wide_banner_1').addService(googletag.pubads());
+      googletag.defineSlot('/45577845/Tatler_test/wide_banner_1', div_1_sizes, 'wide_banner_1').addService(googletag.pubads());
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
     googletag.cmd.push(function() {
-      googletag.defineSlot('/45577845/Tatler/skyscraper_inner', div_2_sizes, 'skyscraper_inner').addService(googletag.pubads());
+      googletag.defineSlot('/45577845/Tatler_test/skyscraper_inner', div_2_sizes, 'skyscraper_inner').addService(googletag.pubads());
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
