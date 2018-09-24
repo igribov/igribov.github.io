@@ -85,6 +85,12 @@
           googletag.pubads().refresh();
         });
       });
+
+      ['/45577845/Tatler/wide_banner_1', '/45577845/Tatler/skyscraper_inner'].forEach(function(code) {
+        let params = pbjs.getAdserverTargetingForAdUnitCode(code);
+        console.log('params', params);
+      });
+
     }
     // in case PBJS doesn't load
     setTimeout(function() {
