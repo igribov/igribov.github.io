@@ -68,35 +68,10 @@
     pbjs.que.push(function() {
       pbjs.addAdUnits(adUnits);
       pbjs.requestBids({
-        bidsBackHandler: sendAdserverRequest,
+        bidsBackHandler: initAdserver,
         timeout: PREBID_TIMEOUT
       });
     });
-
-    function sendAdserverRequest() {
-      if (pbjs.adserverRequestSent) return;
-      pbjs.adserverRequestSent = true;
-      googletag.cmd.push(function() {
-        pbjs.que.push(function() {
-
-          var dfpSlotsList = [];
-
-          dfpSlotsList = Object.keys(dfp_slot).map(function(slotKey) {
-
-            //console.log(dfp_slot);
-            if (slotKey === 'inread') {
-              return false;
-            }
-
-            return dfp_slot[slotKey];
-          });
-
-          pbjs.setTargetingForGPTAsync();
-          googletag.pubads().refresh(dfpSlotsList);
-        });
-      });
-    }
-
 
     function initAdserver(e) {
       console.log('handler->', e);
@@ -110,9 +85,9 @@
       });
     }
     // in case PBJS doesn't load
-    //setTimeout(function() {
-    //  initAdserver();
-    //}, FAILSAFE_TIMEOUT);
+    setTimeout(function() {
+      initAdserver();
+    }, FAILSAFE_TIMEOUT);
 
     googletag.cmd.push(function() {
       googletag.defineSlot('/45577845/Tatler/wide_banner_1', div_1_sizes, 'div-1').addService(googletag.pubads());
