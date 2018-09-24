@@ -109,20 +109,20 @@
       googletag.enableServices();
     });
 
-    setTimeout(function () {
-      console.log('create csript');
-      var w = window;
-      for (i = 0; i < 10; i++) {
-        if (w.pbjs) {
-          try {
-            w.pbjs.renderAd(document, '%%PATTERN:hb_adid%%');
-            break;
-          } catch (e) {
-            continue;
-          }
-        }
-      }
-    }, 5000);
+    // setTimeout(function () {
+    //   console.log('create csript');
+    //   var w = window;
+    //   for (i = 0; i < 10; i++) {
+    //     if (w.pbjs) {
+    //       try {
+    //         w.pbjs.renderAd(document, '%%PATTERN:hb_adid%%');
+    //         break;
+    //       } catch (e) {
+    //         continue;
+    //       }
+    //     }
+    //   }
+    // }, 5000);
 
   </script>
 
