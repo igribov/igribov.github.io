@@ -19,32 +19,40 @@
 
     var adUnits = [
       {
-        code: '/19968336/header-bid-tag-0',
+        code: '/45577845/Tatler/wide_banner_1',
         mediaTypes: {
           banner: {
-            sizes: div_1_sizes
-          }
+            sizes: [[990, 250]],
+          },
         },
-        bids: [{
-          bidder: 'appnexus',
-          params: {
-            placementId: 13144370
-          }
-        }]
+        bids: [
+          {
+            bidder: 'between',
+            params: {
+              w: 970,
+              h: 250,
+              s: 2667423,
+            }
+          },
+        ]
       },
       {
-        code: '/19968336/header-bid-tag-1',
+        code: '/45577845/Tatler/wide_banner_2',
         mediaTypes: {
           banner: {
-            sizes: div_2_sizes
-          }
+            sizes: [[990, 250], [990, 500]],
+          },
         },
-        bids: [{
-          bidder: 'appnexus',
-          params: {
-            placementId: 13144370
-          }
-        }]
+        bids: [
+          {
+            bidder: 'between',
+            params: {
+              w: 970,
+              h: 250,
+              s: 2667423,
+            }
+          },
+        ]
       }
     ];
 
